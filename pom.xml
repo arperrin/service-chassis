@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.perrin</groupId>
 	<artifactId>service-chassis</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>service-chassis</name>
 	<description>Demo project for service-chassis</description>
 
@@ -19,8 +19,7 @@
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/arperrin/service-chassis.git</developerConnection>
-	  <tag>service-chassis-0.0.1</tag>
-  </scm>
+  	</scm>
 
 	<dependencies>
 		<dependency>
