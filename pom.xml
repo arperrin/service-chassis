@@ -20,6 +20,7 @@
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/arperrin/service-chassis.git</developerConnection>
+		<id>git</id>
   	  	<tag>HEAD</tag>
 	</scm>
 
