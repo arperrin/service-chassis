@@ -15,11 +15,12 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<project.scm.id>git</project.scm.id>
 	</properties>
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/arperrin/service-chassis.git</developerConnection>
-  	  <tag>HEAD</tag>
+  	  	<tag>HEAD</tag>
 	</scm>
 
 	<dependencies>
