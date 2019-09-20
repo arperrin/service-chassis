@@ -11,16 +11,14 @@ pipeline {
         }
         stage('Checkout') {
             steps {
-                git credentialsId: 'github', url: 'https://github.com/arperrin/service-chassis.git'
+                git 'https://github.com/arperrin/service-chassis.git'
             }
         }
         stage('Release') {
             steps {                    
-                withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                    configFileProvider([configFile(fileId: 'maven-settings', targetLocation: 'settings.xml', variable: 'MAVEN_SETTINGS')]) {
-                        sh 'mvn clean release:prepare release:perform -B -s ${MAVEN_SETTINGS} -Dusername=${user} -Dpassword=${pass}'
-                    }                
-                }
+                configFileProvider([configFile(fileId: 'maven-settings', targetLocation: 'settings.xml', variable: 'MAVEN_SETTINGS')]) {
+                    sh 'mvn clean release:prepare release:perform -B -s ${MAVEN_SETTINGS}'
+                }                
             }
         }
     }
