@@ -11,9 +11,11 @@ pipeline {
         }
         stage('Release') {
             steps {                
-                configFileProvider([configFile(fileId: 'maven-settings', targetLocation: 'settings.xml', variable: 'MAVEN_SETTINGS')]) {
-                    sh 'mvn clean release:prepare release:perform -B -s ${MAVEN_SETTINGS}'
-                }                
+                withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                    configFileProvider([configFile(fileId: 'maven-settings', targetLocation: 'settings.xml', variable: 'MAVEN_SETTINGS')]) {
+                        sh 'mvn clean release:prepare release:perform -B -s ${MAVEN_SETTINGS} -Dusername=${user} -Dpassword=${pass}'
+                    }                
+                }
             }
         }
     }

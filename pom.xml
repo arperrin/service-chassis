@@ -19,7 +19,9 @@
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/arperrin/service-chassis.git</developerConnection>
-  	  	<tag>HEAD</tag>
+ 		<url>https://github.com/arperrin/service-chassis.git</url>
+    	<connection>scm:git:https://github.com/arperrin/service-chassis.git</connection>
+		<tag>HEAD</tag>
 	</scm>
 
 	<dependencies>
